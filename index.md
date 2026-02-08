@@ -7,4 +7,3 @@ layout: default
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice)
 
-[Visit my GitHub profile](https://github.com/yourusername)
