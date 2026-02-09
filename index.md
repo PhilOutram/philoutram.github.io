@@ -7,4 +7,5 @@ layout: default
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice)
 - [Hunters](/hunters)
+- [Traitors](traitors)
 
