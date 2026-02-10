@@ -6,7 +6,7 @@ layout: default
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice)
-- [Hunters](/hunters)
+- [Hunters](/hunters) - work in progress
 - [Traitors](traitors)
 - [Among Us](among-us)
 
