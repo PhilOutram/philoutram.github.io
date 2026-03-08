@@ -5,7 +5,7 @@ layout: default
 # Welcome to My Site
 
 
-## Apps
+## Web Apps
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice)
