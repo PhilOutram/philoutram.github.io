@@ -12,6 +12,7 @@ layout: default
 - [Hunters](/hunters) - work in progress
 - [Traitors](traitors)
 - [Among Us](among-us)
+- [My Recipes](my-recipes)
 
 ## Tutorials
 - [Vibe Coding](vibe-coding-tutorial)
