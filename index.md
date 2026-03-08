@@ -14,7 +14,7 @@ layout: default
 - [Among Us](among-us)
 
 ## Tutorials
-- [Vibe Coding]
+- [Vibe Coding](vibe-coding-tutorial)
 
 ## Hockey
 
