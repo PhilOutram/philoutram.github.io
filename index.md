@@ -18,5 +18,5 @@ layout: default
 
 ## Hockey
 
-[West Hockey League – Division 2 Central](https://west.englandhockey.co.uk/competitions/2025-2026-4572903-adult-west-open---mens-group-4574807-west-open---mens-division-2-central)
+- [West Hockey League – Division 2 Central](https://west.englandhockey.co.uk/competitions/2025-2026-4572903-adult-west-open---mens-group-4574807-west-open---mens-division-2-central)
 
