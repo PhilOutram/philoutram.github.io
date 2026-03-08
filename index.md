@@ -13,6 +13,8 @@ layout: default
 - [Traitors](traitors)
 - [Among Us](among-us)
 
+## Tutorials
+- [Vibe Coding]
 
 ## Hockey
 
