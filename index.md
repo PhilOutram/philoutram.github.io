@@ -14,6 +14,7 @@ layout: default
 - [Among Us](among-us)
 - [My Recipes](my-recipes)
 - [Petrol Prices](petrol-prices)
+- [Gardening Calendar](gardening-calendar)
 
 ## Tutorials
 - [Vibe Coding](vibe-coding-tutorial)
