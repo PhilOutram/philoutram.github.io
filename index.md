@@ -16,7 +16,7 @@ layout: default
 
 ## Tutorials
 - [Vibe Coding](vibe-coding-tutorial)
-- [Simple Apps](vibe-coded-apps)
+- [Simple App Examples](vibe-coded-apps)
 
 ## Hockey
 
