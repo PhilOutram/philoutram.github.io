@@ -13,6 +13,7 @@ layout: default
 - [Traitors](traitors)
 - [Among Us](among-us)
 - [My Recipes](my-recipes)
+- [Petrol Prices](petrol-prices)
 
 ## Tutorials
 - [Vibe Coding](vibe-coding-tutorial)
