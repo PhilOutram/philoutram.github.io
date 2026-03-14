@@ -13,7 +13,7 @@ layout: default
 - [Traitors](traitors)
 - [Among Us](among-us)
 - [My Recipes](my-recipes)
-- [Petrol Prices](https://petrol-prices-6pb2w25ho-philoutrams-projects.vercel.app/)
+- [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
 
 ## Tutorials
