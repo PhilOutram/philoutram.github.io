@@ -17,7 +17,8 @@ layout: default
 - [Gardening Calendar](gardening-calendar)
 
 ## Tutorials
-- [Vibe Coding](vibe-coding-tutorial)
+- [Vibe Coding instructions - web](vibe-coding-tutorial)
+- [Vibe Coding instructions with images - pdf](vibe_coding_with_prompts_v3.pdf)
 - [Simple App Examples](vibe-coded-apps)
 
 ## Hockey
