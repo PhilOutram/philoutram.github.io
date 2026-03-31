@@ -19,7 +19,7 @@ layout: default
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
-- [Vibe Coding instructions with images - pdf](vibe_coding_with_prompts_v3.pdf)
+- [Vibe Coding instructions with images - pdf](Vibe coding with prompts - Basics.pdf)
 - [Simple App Examples](vibe-coded-apps)
 
 ## Hockey
