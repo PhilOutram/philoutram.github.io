@@ -8,13 +8,14 @@ layout: default
 ## Web Apps
 
 - [Teamo](/teamo)
-- [Piano Practice](/piano-practice)
+- [Piano Practice](/piano-practice) - needs an mp3 file
 - [Hunters](/hunters) - work in progress
 - [Traitors](traitors)
 - [Among Us](among-us)
 - [My Recipes](my-recipes)
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
+- [5-min Morning Yoga](morning-yoga)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
