@@ -16,6 +16,7 @@ layout: default
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
 - [5-min Morning Yoga](morning-yoga)
+- [Game Timer](timer-app)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
