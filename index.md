@@ -17,6 +17,7 @@ layout: default
 - [Gardening Calendar](gardening-calendar)
 - [5-min Morning Yoga](morning-yoga)
 - [Game Timer](timer-app)
+- [GCSE Challenge](https://gcse-challenge.vercel.app/)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
