@@ -4,6 +4,8 @@ layout: default
 
 # Welcome to My Site
 
+## Most popular
+- [Ideas Board](ideas-board)
 
 ## Web Apps
 
