@@ -5,7 +5,7 @@ layout: default
 # Welcome to My Site
 
 ## Most popular
-- [Ideas Board](https://ideas-board.vercel.app/)
+- [Ideas Board]([https://ideas-board-mu.vercel.app/))
 
 ## Web Apps
 
