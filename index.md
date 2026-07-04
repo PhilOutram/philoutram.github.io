@@ -19,7 +19,7 @@ layout: default
 - [Gardening Calendar](gardening-calendar)
 - [5-min Morning Yoga](morning-yoga)
 - [Game Timer](timer-app)
-- [Chore Wheel of Fortune!](https://chore-wheel-5a2fh43hl-philoutrams-projects.vercel.app/)
+- [Chore Wheel of Fortune!](https://chore-wheel-one.vercel.app/)
 - [Ideas Board](https://ideas-board-mu.vercel.app/)
 - [GCSE Challenge](https://gcse-challenge.vercel.app/)
 
