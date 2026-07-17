@@ -14,7 +14,7 @@ layout: default
 - [Hunters](/hunters) - work in progress
 - [Traitors](traitors)
 - [Among Us](among-us)
-- [My Recipes](my-recipes)
+- [My Recipes](https://my-recipes-rho-rosy.vercel.app/)
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
 - [5-min Morning Yoga](morning-yoga)
