@@ -37,4 +37,4 @@ layout: default
 - [PairUp](https://pair-up-ten.vercel.app/)
 
 
-v1.0
+v1.1
