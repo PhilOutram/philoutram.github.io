@@ -22,6 +22,7 @@ layout: default
 - [Chore Wheel of Fortune!](https://chore-wheel-one.vercel.app/)
 - [Ideas Board](https://ideas-board-mu.vercel.app/)
 - [GCSE Challenge](https://gcse-challenge.vercel.app/)
+- [Uke Box](https://uke-box.vercel.app/)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
