@@ -23,6 +23,7 @@ layout: default
 - [Ideas Board](https://ideas-board-mu.vercel.app/)
 - [GCSE Challenge](https://gcse-challenge.vercel.app/)
 - [Uke Box](https://uke-box.vercel.app/)
+- [Family Game Rules](game-rules)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
