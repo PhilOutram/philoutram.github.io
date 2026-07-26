@@ -11,7 +11,7 @@ layout: default
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice) - needs an mp3 file
-- [Hunters](/hunters) - work in progress
+- [[Hunters](/hunters)](https://hunters-sigma.vercel.app/) - work in progress
 - [Traitors](traitors)
 - [Among Us](among-us)
 - [My Recipes](https://my-recipes-rho-rosy.vercel.app/)
