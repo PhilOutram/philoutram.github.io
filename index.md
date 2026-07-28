@@ -7,7 +7,7 @@ layout: default
 ## Most popular
 - [Ideas Board](https://ideas-board-mu.vercel.app/)
 
-## Web Apps
+## Apps
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice) - needs an mp3 file
@@ -23,7 +23,11 @@ layout: default
 - [Ideas Board](https://ideas-board-mu.vercel.app/)
 - [GCSE Challenge](https://gcse-challenge.vercel.app/)
 - [Uke Box](https://uke-box.vercel.app/)
+
+## Games
 - [Family Game Rules](game-rules)
+- [St Hilaire](https://st-hilaire.vercel.app)
+- [St Hilaire - monitor](https://st-hilaire.vercel.app/?view=monitor)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
