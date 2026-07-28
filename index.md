@@ -11,9 +11,6 @@ layout: default
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice) - needs an mp3 file
-- [Hunters](https://hunters-sigma.vercel.app/) - work in progress
-- [Traitors](traitors)
-- [Among Us](among-us)
 - [My Recipes](https://my-recipes-rho-rosy.vercel.app/)
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
@@ -26,6 +23,9 @@ layout: default
 
 ## Games
 - [Family Game Rules](game-rules)
+- [Hunters](https://hunters-sigma.vercel.app/) - work in progress
+- [Traitors](traitors)
+- [Among Us](among-us)
 - [St Hilaire](https://st-hilaire.vercel.app)
 - [St Hilaire - monitor](https://st-hilaire.vercel.app/?view=monitor)
 
