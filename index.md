@@ -30,7 +30,7 @@ layout: default
 - [Among Us](among-us)
 - [St Hilaire](https://st-hilaire.vercel.app)
 - [St Hilaire - monitor](https://st-hilaire.vercel.app/?view=monitor)
-- [Boggle](boggle)
+- [Boggle](https://boggle-lovat.vercel.app/)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
