@@ -31,6 +31,7 @@ layout: default
 - [St Hilaire](https://st-hilaire.vercel.app)
 - [St Hilaire - monitor](https://st-hilaire.vercel.app/?view=monitor)
 - [Boggle](https://boggle-lovat.vercel.app/)
+- [Team Sudoku](https://team-sudoku.vercel.app/)
 
 ## Tutorials
 - [Vibe Coding instructions - web](vibe-coding-tutorial)
