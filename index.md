@@ -9,8 +9,7 @@ layout: default
 
 ## Apps
 
-- [Teamo](/teamo)
-- [Piano Practice](/piano-practice) - needs an mp3 file
+- [Piano Practice](/piano-practice)
 - [RecipeBox](https://my-recipes-rho-rosy.vercel.app/)
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
@@ -40,11 +39,9 @@ layout: default
 
 ## Hockey
 
+- [Teamo](/teamo)
 - [ISCA M4 App](isca-m4-hockey-app)
-- [West Hockey League – Division 2 Central](https://west.englandhockey.co.uk/competitions/2025-2026-4572903-adult-west-open---mens-group-4574807-west-open---mens-division-2-central)
-
-## Other
-- [PairUp](https://pair-up-ten.vercel.app/)
+- [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions)
 
 
 v1.1
