@@ -11,7 +11,7 @@ layout: default
 
 - [Teamo](/teamo)
 - [Piano Practice](/piano-practice) - needs an mp3 file
-- [My Recipes](https://my-recipes-rho-rosy.vercel.app/)
+- [RecipeBox](https://my-recipes-rho-rosy.vercel.app/)
 - [Petrol Prices](https://petrol-prices-nine.vercel.app/)
 - [Gardening Calendar](gardening-calendar)
 - [5-min Morning Yoga](morning-yoga)
