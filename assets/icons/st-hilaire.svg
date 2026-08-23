@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="app icon">
+  <rect width="512" height="512" rx="112" fill="#0f172a" />
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#38bdf8" stroke-width="18" />
+  <polygon points="256,116 300,300 256,264 212,300" fill="#e11d48" />
+  <polygon points="256,396 212,212 256,248 300,212" fill="#f1f5f9" />
+  <circle cx="256" cy="256" r="16" fill="#38bdf8" />
+</svg>
