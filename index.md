@@ -39,7 +39,7 @@ layout: default
 
 ## Hockey
 
-- [Teamo](/teamo)
+- [Teamo](https://teamo-ruby-seven.vercel.app/)
 - [ISCA M4 App](isca-m4-hockey-app)
 - [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions)
 
