@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Boggle icon">
+  <rect width="512" height="512" rx="112" fill="#5c3a1c" />
+  <rect x="70" y="70" width="372" height="372" rx="28" fill="#7a4f28" />
+  <g font-family="system-ui, sans-serif" font-weight="800" font-size="120" fill="#22303a" text-anchor="middle">
+    <rect x="100" y="100" width="140" height="140" rx="20" fill="#f5efe1" stroke="#d9c7a3" stroke-width="4" />
+    <text x="170" y="192">B</text>
+    <rect x="272" y="100" width="140" height="140" rx="20" fill="#f5efe1" stroke="#d9c7a3" stroke-width="4" />
+    <text x="342" y="192" transform="rotate(90 342 170)">O</text>
+    <rect x="100" y="272" width="140" height="140" rx="20" fill="#f5efe1" stroke="#d9c7a3" stroke-width="4" />
+    <text x="170" y="364" transform="rotate(-90 170 342)">G</text>
+    <rect x="272" y="272" width="140" height="140" rx="20" fill="#f5efe1" stroke="#d9c7a3" stroke-width="4" />
+    <text x="342" y="364">E</text>
+  </g>
+</svg>
