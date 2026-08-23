@@ -1,0 +1,39 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// The minimal theme gives the content column a fixed 500px, which is why a
+// long app list runs as one narrow ribbon. Widen it only above the theme's own
+// 960px breakpoint, so the mobile rules below that are left exactly as they
+// were.
+@media screen and (min-width: 961px) {
+  .wrapper {
+    width: 1080px;
+  }
+
+  section {
+    width: 740px;
+  }
+}
+
+// Flow the link lists into columns. Using column-width rather than a fixed
+// column-count means the browser picks the number that fits, so this degrades
+// to a single column on a phone without another media query.
+section ul {
+  column-width: 210px;
+  column-gap: 40px;
+}
+
+// Without this a list item can be split down the middle across two columns.
+section ul li {
+  break-inside: avoid;
+  page-break-inside: avoid; // still needed for older WebKit
+}
+
+// A heading immediately after a multi-column list can otherwise sit tight
+// against the last item.
+section h2 {
+  clear: both;
+  margin-top: 28px;
+}
