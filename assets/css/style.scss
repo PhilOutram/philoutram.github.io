@@ -23,12 +23,28 @@
 section ul {
   column-width: 210px;
   column-gap: 40px;
+  list-style: none;   // the icon is the marker now
+  padding-left: 0;
 }
 
-// Without this a list item can be split down the middle across two columns.
+// Without this a row can be split down the middle across two columns.
 section ul li {
   break-inside: avoid;
   page-break-inside: avoid; // still needed for older WebKit
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+  line-height: 1.35;
+}
+
+// Each app's own icon. Fixed box so mismatched source shapes still line up,
+// and object-fit: contain keeps a non-square icon from stretching.
+.app-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 // A heading immediately after a multi-column list can otherwise sit tight
