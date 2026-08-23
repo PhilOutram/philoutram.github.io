@@ -32,7 +32,9 @@ section ul li {
   break-inside: avoid;
   page-break-inside: avoid; // still needed for older WebKit
   display: flex;
-  align-items: center;
+  // Top-aligned, not centred: three of the longer labels wrap to two lines,
+  // and a vertically centred icon next to a two-line label reads as a mistake.
+  align-items: flex-start;
   gap: 9px;
   margin-bottom: 7px;
   line-height: 1.35;
@@ -45,6 +47,7 @@ section ul li {
   width: 22px;
   height: 22px;
   object-fit: contain;
+  margin-top: 1px;   // optically centres the icon on the first line of text
 }
 
 // A heading immediately after a multi-column list can otherwise sit tight
