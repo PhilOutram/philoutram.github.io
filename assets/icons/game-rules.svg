@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Family Game Rules icon">
+  <rect width="512" height="512" rx="112" fill="#5c3a22" />
+  <rect x="70" y="96" width="372" height="320" rx="14" fill="#c79a6b" />
+  <polygon points="96,96 168,96 132,250" fill="#9c6640" />
+  <polygon points="184,96 256,96 220,250" fill="#e7c9a0" />
+  <polygon points="96,416 168,416 132,262" fill="#e7c9a0" />
+  <polygon points="344,416 416,416 380,262" fill="#9c6640" />
+  <rect x="248" y="96" width="16" height="320" fill="#5c3a22" />
+  <circle cx="380" cy="372" r="34" fill="#f5efe1" stroke="#c8b48f" stroke-width="6" />
+  <circle cx="220" cy="140" r="34" fill="#26262b" />
+</svg>
