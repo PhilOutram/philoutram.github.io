@@ -40,6 +40,7 @@ layout: default
 
 - <img class="app-icon" src="assets/icons/teamo.png" alt=""> [Teamo](https://teamo-ruby-seven.vercel.app/)
 - <img class="app-icon" src="assets/icons/isca-m4.svg" alt=""> [ISCA M4 App](isca-m4-hockey-app)
+- <img class="app-icon" src="assets/icons/hockey-stats.png" alt=""> [Hockey League Analysis](hockey-league-analysis) - [Python source on GitHub](https://github.com/PhilOutram/hockey-league-analysis)
 - <img class="app-icon" src="assets/icons/west-hockey.png" alt=""> [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions/2026-2027-4714903-adult-west-open---mens-group-4716307-west-open---mens-division-2-south)
 
 
