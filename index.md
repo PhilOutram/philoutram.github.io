@@ -19,6 +19,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/gcse-challenge.png" alt=""> [GCSE Challenge](https://gcse-challenge.vercel.app/)
 - <img class="app-icon" src="assets/icons/uke-box.svg" alt=""> [Uke Box](https://uke-box.vercel.app/)
 - <img class="app-icon" src="assets/icons/first-twenty.svg" alt=""> [First Twenty](first-twenty)
+- <img class="app-icon" src="assets/icons/birthdays.svg" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
 
 ## Games
 - <img class="app-icon" src="assets/icons/family-games.svg" alt=""> [Family Games](https://family-games-drab.vercel.app/)
@@ -44,4 +45,4 @@ layout: default
 - <img class="app-icon" src="assets/icons/west-hockey.png" alt=""> [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions/2026-2027-4714903-adult-west-open---mens-group-4716307-west-open---mens-division-2-south)
 
 
-v1.1
+v1.2
