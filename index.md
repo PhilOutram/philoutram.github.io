@@ -19,7 +19,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/gcse-challenge.png" alt=""> [GCSE Challenge](https://gcse-challenge.vercel.app/)
 - <img class="app-icon" src="assets/icons/uke-box.svg" alt=""> [Uke Box](https://uke-box.vercel.app/)
 - <img class="app-icon" src="assets/icons/first-twenty.svg" alt=""> [First Twenty](first-twenty)
-- <img class="app-icon" src="assets/icons/birthdays.svg" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
+- <img class="app-icon" src="assets/icons/birthdays.png" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
 
 ## Games
 - <img class="app-icon" src="assets/icons/family-games.svg" alt=""> [Family Games](https://family-games-drab.vercel.app/)
