@@ -18,6 +18,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/chore-wheel.svg" alt=""> [Chore Wheel of Fortune!](https://chore-wheel-one.vercel.app/)
 - <img class="app-icon" src="assets/icons/gcse-challenge.png" alt=""> [GCSE Challenge](https://gcse-challenge.vercel.app/)
 - <img class="app-icon" src="assets/icons/uke-box.svg" alt=""> [Uke Box](https://uke-box.vercel.app/)
+- <img class="app-icon" src="assets/icons/guit-box.png" alt=""> [Guit Box](https://guit-box.vercel.app/)
 - <img class="app-icon" src="assets/icons/first-twenty.svg" alt=""> [First Twenty](first-twenty)
 - <img class="app-icon" src="assets/icons/birthdays.png" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
 
