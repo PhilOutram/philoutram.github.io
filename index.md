@@ -47,4 +47,4 @@ layout: default
 - <img class="app-icon" src="assets/icons/isca-club.png" alt=""> [Isca Hockey Club](https://isca-club-app.vercel.app/)
 
 
-v1.4
+v1.5
