@@ -4,20 +4,28 @@
       <stop offset="0" stop-color="#38bdf8" />
       <stop offset="1" stop-color="#6366f1" />
     </linearGradient>
+    <!-- Sound hole knocked out of the silhouette. -->
+    <mask id="cut" maskUnits="userSpaceOnUse" x="-400" y="-400" width="800" height="800">
+      <rect x="-400" y="-400" width="800" height="800" fill="#fff" />
+      <circle cx="0" cy="112" r="25" fill="#000" />
+    </mask>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#bg)" />
-  <!-- Ukulele body -->
-  <g fill="#0f172a">
-    <path d="M262 300c0 52-34 96-84 96s-84-40-84-92c0-42 28-70 58-84 20-9 30-22 30-44
-             0-4 3-7 7-7h30c4 0 7 3 7 7 0 22 10 35 30 44 12 6 22 14 28 24 5 9-1 20-11 22
-             -6 1-12-2-15-7-4 8-11 15-19 19 8 4 15 12 18 22z" opacity="0.9" />
+  <!-- Ukulele, drawn upright (neck up) then tilted 45 degrees. -->
+  <g transform="translate(256 256) rotate(45) scale(1) translate(0 -23)" fill="#0f172a">
+    <g mask="url(#cut)">
+      <!-- Body: small figure-of-eight, upper bout narrower than the lower -->
+      <path d="M0,10 C40,10 60,38 60,68 C60,94 48,104 48,118 C48,132 80,142 80,174
+               C80,222 44,252 0,252 C-44,252 -80,222 -80,174 C-80,142 -48,132 -48,118
+               C-48,104 -60,94 -60,68 C-60,38 -40,10 0,10 Z" />
+      <!-- Neck: short and broad -->
+      <rect x="-14" y="-150" width="28" height="168" rx="5" />
+      <!-- Headstock with two tuning pegs a side -->
+      <rect x="-23" y="-205" width="46" height="66" rx="13" />
+      <circle cx="-30" cy="-188" r="9" />
+      <circle cx="-30" cy="-160" r="9" />
+      <circle cx="30" cy="-188" r="9" />
+      <circle cx="30" cy="-160" r="9" />
+    </g>
   </g>
-  <!-- Sound hole -->
-  <circle cx="178" cy="304" r="26" fill="#38bdf8" />
-  <!-- Neck -->
-  <rect x="286" y="120" width="34" height="150" rx="10" fill="#0f172a" opacity="0.9"
-        transform="rotate(38 303 195)" />
-  <!-- Headstock -->
-  <rect x="330" y="86" width="52" height="40" rx="10" fill="#0f172a" opacity="0.9"
-        transform="rotate(38 356 106)" />
 </svg>
