@@ -33,6 +33,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/boggle.svg" alt=""> [Boggle](https://boggle-lovat.vercel.app/)
 - <img class="app-icon" src="assets/icons/team-sudoku.svg" alt=""> [Team Sudoku](https://team-sudoku.vercel.app/)
 - [Mech Attack](mech-attack)
+- [Hex Tribes](hex-tribes)
 
 ## Tutorials
 - <img class="app-icon" src="assets/icons/vibe-tutorial.png" alt=""> [Vibe Coding instructions - web](vibe-coding-tutorial)
@@ -48,4 +49,4 @@ layout: default
 - <img class="app-icon" src="assets/icons/isca-club.png" alt=""> [Isca Hockey Club](https://isca-club-app.vercel.app/)
 
 
-v1.6
+v1.7
