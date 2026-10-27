@@ -48,5 +48,9 @@ layout: default
 - <img class="app-icon" src="assets/icons/west-hockey.png" alt=""> [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions/2026-2027-4714903-adult-west-open---mens-group-4716307-west-open---mens-division-2-south)
 - <img class="app-icon" src="assets/icons/isca-club.png" alt=""> [Isca Hockey Club](https://isca-club-app.vercel.app/)
 
+## Other
 
-v1.7
+- <img class="app-icon" src="assets/icons/kcs-tour.svg" alt=""> [King Charles Street Tour](kcs-tour)
+
+
+v1.8
