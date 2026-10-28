@@ -32,7 +32,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/st-hilaire.svg" alt=""> [St Hilaire - monitor](https://st-hilaire.vercel.app/?view=monitor)
 - <img class="app-icon" src="assets/icons/boggle.svg" alt=""> [Boggle](https://boggle-lovat.vercel.app/)
 - <img class="app-icon" src="assets/icons/team-sudoku.svg" alt=""> [Team Sudoku](https://team-sudoku.vercel.app/)
-- [Mech Attack](mech-attack)
+- <img class="app-icon" src="assets/icons/mech-attack.png" alt=""> [Mech Attack](mech-attack)
 - [Hex Tribes](hex-tribes)
 
 ## Tutorials
