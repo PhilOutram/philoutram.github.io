@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Dartmoor Photography Tour icon">
+  <rect width="100" height="100" rx="22" fill="#2F3E66"/>
+  <circle cx="64" cy="40" r="14" fill="#F8CE96"/>
+  <path d="M0 70 Q30 58 55 64 Q80 70 100 62 V100 H0Z" fill="#7D5B87"/>
+  <path d="M30 66 L33 52 Q35 46 41 46 L44 40 Q46 36 52 36 L58 37 Q63 38 63 44 L66 50 Q70 52 70 58 L72 66Z" fill="#241A30"/>
+  <path d="M0 80 Q40 72 100 82 V100 H0Z" fill="#B9533F"/>
+</svg>

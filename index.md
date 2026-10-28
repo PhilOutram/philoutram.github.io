@@ -52,6 +52,7 @@ layout: default
 ## Other
 
 - <img class="app-icon" src="assets/icons/kcs-tour.svg" alt=""> [King Charles Street Tour](kcs-tour)
+- <img class="app-icon" src="assets/icons/dartmoor-tour.svg" alt=""> [Dartmoor Photography Tour](dartmoor-photo-tour/)
 
 
-v1.9
+v1.10

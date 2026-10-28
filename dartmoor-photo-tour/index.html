@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dartmoor Photography Tour</title>
+<meta name="description" content="Where to stand to photograph Dartmoor's classic views: map, OS grid references, light and parking notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root {
+  --bg: #FBF6EC;
+  --surface: #FFFFFF;
+  --ink: #1F2A3A;
+  --muted: #55606E;
+  --line: #E4DCCB;
+  --accent: #2F3E66;
+  --accent-ink: #FBE9C6;
+  --coral: #B9533F;
+  --chip: #EFE6D3;
+  --east: #B9533F;
+  --west: #2F6E8F;
+  --extra: #6B5B3A;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141A24;
+    --surface: #1D2533;
+    --ink: #EDE6D6;
+    --muted: #A9B0BA;
+    --line: #2E3A4D;
+    --accent: #2F3E66;
+    --accent-ink: #FBE9C6;
+    --coral: #F0907A;
+    --chip: #283246;
+    --east: #F0907A;
+    --west: #7FC0E0;
+    --extra: #D8C49A;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Jost', system-ui, sans-serif; font-size: 17px; line-height: 1.55; }
+a { color: var(--coral); }
+a:hover { text-decoration-thickness: 2px; }
+header { background: var(--accent); color: var(--accent-ink); padding: 48px 16px 40px; text-align: center; }
+header .eyebrow { margin: 0 0 6px; font-size: 14px; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; opacity: .9; }
+header h1 { margin: 0; font-size: clamp(36px, 7vw, 64px); font-weight: 500; letter-spacing: 4px; line-height: 1.05; text-transform: uppercase; }
+header p.lede { max-width: 640px; margin: 16px auto 0; font-size: 18px; color: #F1DDBF; }
+main { max-width: 1120px; margin: 0 auto; padding: 0 16px 64px; }
+.home { display: inline-block; margin-top: 18px; color: var(--accent-ink); font-size: 15px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 16px; }
+.filters button { font: inherit; font-size: 15px; font-weight: 500; padding: 10px 16px; min-height: 44px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+#map { height: 60vh; min-height: 360px; max-height: 620px; border-radius: 12px; border: 1px solid var(--line); }
+.map-tools { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+.map-tools button { font: inherit; font-size: 15px; padding: 8px 14px; min-height: 44px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.pin { width: 30px; height: 30px; border-radius: 50%; color: #fff; font: 600 14px/30px 'Jost', sans-serif; text-align: center; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.pin.east { background: #B9533F; } .pin.west { background: #2F6E8F; } .pin.extra { background: #6B5B3A; }
+.leaflet-popup-content { font-family: 'Jost', sans-serif; font-size: 15px; }
+.leaflet-popup-content b { font-size: 16px; }
+section h2 { font-size: 28px; font-weight: 500; margin: 48px 0 8px; }
+section > p { color: var(--muted); max-width: 720px; margin: 0 0 20px; }
+.days { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.day { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.day h3 { margin: 0 0 4px; font-size: 20px; font-weight: 600; }
+.day ol { margin: 8px 0 0; padding-left: 22px; }
+.day li { margin: 4px 0; }
+.tag { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: var(--chip); }
+.tag.east { color: var(--east); } .tag.west { color: var(--west); } .tag.extra { color: var(--extra); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; scroll-margin-top: 16px; }
+.card:target, .card.flash { outline: 3px solid var(--coral); outline-offset: 2px; }
+.card figure { margin: 0; aspect-ratio: 4 / 3; background: var(--chip); }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card h3 { margin: 0; font-size: 21px; font-weight: 600; display: flex; gap: 10px; align-items: baseline; }
+.card h3 .num { font-size: 15px; color: var(--muted); font-weight: 500; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px; }
+.grid { font-variant-numeric: tabular-nums; font-weight: 600; background: var(--chip); padding: 2px 10px; border-radius: 6px; }
+.poster { font-size: 13px; font-weight: 600; color: var(--coral); }
+dl { margin: 0; display: grid; gap: 8px; }
+dt { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+dd { margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 15px; margin-top: auto; padding-top: 6px; }
+.credit { font-size: 12.5px; color: var(--muted); }
+.credit a { color: var(--muted); }
+.tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.tips div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.tips h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+.tips p { margin: 0; }
+footer { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <p class="eyebrow">Devon · National Park</p>
+  <h1>Dartmoor<br>Photography Tour</h1>
+  <p class="lede">Ten classic views, where to stand for each, and when the light works. Taken as reference for a set of vintage-style travel posters.</p>
+  <a class="home" href="/">← Back to Phil's apps</a>
+</header>
+
+<main>
+  <div class="filters" role="group" aria-label="Show locations">
+    <button type="button" data-filter="all" aria-pressed="true">All ten</button>
+    <button type="button" data-filter="east" aria-pressed="false">East day</button>
+    <button type="button" data-filter="west" aria-pressed="false">West day</button>
+    <button type="button" data-filter="extra" aria-pressed="false">Extras</button>
+  </div>
+
+  <div id="map" role="region" aria-label="Map of photography locations"></div>
+  <div class="map-tools">
+    <span>Pins mark the landmark. The card for each says where to stand.</span>
+    <span>
+      <button type="button" id="layerBtn">Show contour map</button>
+      <button type="button" id="locateBtn">Show my location</button>
+    </span>
+  </div>
+
+  <section>
+    <h2>Two days covers it</h2>
+    <p>Everything is on OS Explorer OL28 (Dartmoor). The east and west sides each make a comfortable day by car, with short walks.</p>
+    <div class="days">
+      <div class="day">
+        <span class="tag east">East day</span>
+        <h3>Haytor and the Manaton tors</h3>
+        <ol>
+          <li><a href="#emsworthy">Emsworthy Mire</a>, early, while the light is low</li>
+          <li><a href="#haytor">Haytor Rocks</a>, morning to midday</li>
+          <li><a href="#houndtor">Hound Tor</a>, afternoon</li>
+          <li><a href="#bowerman">Bowerman's Nose</a>, evening</li>
+        </ol>
+      </div>
+      <div class="day">
+        <span class="tag west">West day</span>
+        <h3>Two Bridges to Brent Tor</h3>
+        <ol>
+          <li><a href="#burrator">Burrator Reservoir</a>, calm early morning</li>
+          <li><a href="#wistmans">Wistman's Wood</a>, best in mist or drizzle</li>
+          <li><a href="#postbridge">Postbridge clapper bridge</a>, afternoon</li>
+          <li><a href="#brentor">Brent Tor church</a>, sunset</li>
+        </ol>
+      </div>
+      <div class="day">
+        <span class="tag extra">Extras</span>
+        <h3>Add if time allows</h3>
+        <ol>
+          <li><a href="#combestone">Combestone Tor</a>, a sunrise spot next to its car park</li>
+          <li><a href="#meldon">Meldon Viaduct</a>, near Okehampton, any time of day</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The locations</h2>
+    <p>Thumbnails are openly licensed photos from Wikimedia Commons, credited on each card. "More photos" opens every Geograph picture taken in that 1 km grid square, which is the quickest way to scout angles before you go.</p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <h2>Shooting for the poster look</h2>
+    <div class="tips">
+      <div><h3>Low sun</h3><p>Flat-colour posters rely on clear shapes. The first and last two hours of daylight give long shadows and strong silhouettes; midday light flattens tors into grey lumps.</p></div>
+      <div><h3>Big shape, big sky</h3><p>Keep the horizon low and leave empty sky at the top of the frame for the title. Shoot portrait as well as landscape at every stop.</p></div>
+      <div><h3>Find a leading line</h3><p>A path, river, wall or railway that runs into the picture does the work the stream does in a classic beach poster.</p></div>
+      <div><h3>Add something for scale</h3><p>A walker, a pony or sheep makes a tor read as big. Keep them small and simple.</p></div>
+      <div><h3>Check the weather twice</h3><p>Conditions on the high moor change fast and differ from Exeter. Take a paper map: phone signal is patchy.</p></div>
+      <div><h3>Seasons to aim for</h3><p>Gorse is yellow most of the year and brightest in spring; bluebells at Emsworthy in mid-May; heather purple from August.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors; contour layer © <a href="https://opentopomap.org">OpenTopoMap</a> (CC BY-SA). Grid references are for the landmark, converted from map coordinates and accurate to about 100 m. Viewpoint notes are general guidance: walk round each site to find the cleanest angle. Respect access signs and livestock, and stay on paths in Wistman's Wood.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const FP = (name) => 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(name) + '?width=640';
+const FILE = (name) => 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(name.replace(/ /g, '_'));
+const LIC = {
+  'CC BY 2.0': 'https://creativecommons.org/licenses/by/2.0/',
+  'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
+  'CC BY-SA 2.0': 'https://creativecommons.org/licenses/by-sa/2.0/',
+  'CC BY-SA 3.0': 'https://creativecommons.org/licenses/by-sa/3.0/'
+};
+
+const PLACES = [
+  { id: 'emsworthy', day: 'east', name: 'Emsworthy Mire', lat: 50.5736575, lng: -3.7679062, grid: 'SX 749 763', sq: 'SX7476',
+    poster: 'Hawthorn poster',
+    stand: 'Walk down into the reserve from the Saddle Tor side. Look for a lone hawthorn or the ruined barn with Haytor on the skyline behind.',
+    light: 'Early morning or evening. Hawthorn blossom and bluebells in May.',
+    park: 'Saddle Tor car park on the B3387, then walk down.',
+    img: 'Emsworthy - geograph.org.uk - 1015761.jpg', by: 'Derek Harper', lic: 'CC BY-SA 2.0', alt: 'Old walled fields and trees at Emsworthy seen from the moor north of Saddle Tor' },
+  { id: 'haytor', day: 'east', name: 'Haytor Rocks', lat: 50.5802883, lng: -3.7552636, grid: 'SX 758 770', sq: 'SX7577',
+    poster: 'Haytor poster',
+    stand: 'On the wide grass path that climbs from the lower car park, south-west of the rocks, with walkers on the path for scale. Saddle Tor, about 1 km west, shows both outcrops side by side.',
+    light: 'Afternoon, with the sun behind you on the path. Big cumulus days suit it best.',
+    park: 'Lower car park and visitor centre on the B3387 (pay and display).',
+    img: 'Haytor - geograph.org.uk - 6725329.jpg', by: 'Ian Capper', lic: 'CC BY-SA 2.0', alt: 'Haytor Rocks on the skyline' },
+  { id: 'houndtor', day: 'east', name: 'Hound Tor', lat: 50.5969615, lng: -3.7779772, grid: 'SX 742 789', sq: 'SX7478',
+    poster: null,
+    stand: 'From the approach path above the car park for the full jagged ridge, or from the medieval village ruins on the far side, looking back up at the tor.',
+    light: 'Stormy or broken skies give it drama. Works at sunrise and sunset.',
+    park: 'Car park at Swallerton Gate, below the tor.',
+    img: 'Dartmoor Hound Tor.jpg', by: 'Phillip Capper', lic: 'CC BY 2.0', alt: 'The granite ridge of Hound Tor' },
+  { id: 'bowerman', day: 'east', name: "Bowerman's Nose", lat: 50.610265, lng: -3.7807464, grid: 'SX 740 804', sq: 'SX7480',
+    poster: "Bowerman's Nose poster",
+    stand: 'On the north slope of Hayne Down. The stack changes profile from every side, so circle it until the "cap and nose" reads clearly, then step back to bring in the fields behind.',
+    light: 'Evening, when haze softens the valley behind.',
+    park: "St Winifred's church car park in Manaton, then about 25 minutes' walk.",
+    img: 'Bowermans nose.jpg', by: 'J Morley (smalljim)', lic: 'CC BY-SA 3.0', alt: "The stacked granite blocks of Bowerman's Nose" },
+  { id: 'burrator', day: 'west', name: 'Burrator Reservoir', lat: 50.5000467, lng: -4.0361128, grid: 'SX 556 686', sq: 'SX5568',
+    poster: null,
+    stand: 'From the dam or the western shore, looking east to Sheepstor reflected in the water. Climbing Sheeps Tor gives the view down over the whole reservoir.',
+    light: 'Calm, early morning for reflections.',
+    park: 'Several car parks along the reservoir road.',
+    img: 'Image of Burrator Reservoir from on top of Sheeps Tor, Dartmoor - geograph.org.uk - 7988708.jpg', by: 'Pete Cruse', lic: 'CC BY-SA 2.0', alt: 'Burrator Reservoir seen from the top of Sheeps Tor' },
+  { id: 'wistmans', day: 'west', name: "Wistman's Wood", lat: 50.5761709, lng: -3.9611311, grid: 'SX 612 769', sq: 'SX6176',
+    poster: null,
+    stand: 'From the edge of the wood, looking into the moss-covered boulders and twisted oaks. Access inside is restricted to protect the lichens, so stay outside.',
+    light: 'Overcast, misty or drizzly days. Bright sun makes the contrast too harsh.',
+    park: 'Two Bridges car park, then about 2.5 km north on the track along the West Dart.',
+    img: "Wistman's Wood in winter.jpg", by: 'alex jane', lic: 'CC BY-SA 2.0', alt: "Stunted moss-covered oaks of Wistman's Wood in winter" },
+  { id: 'postbridge', day: 'west', name: 'Postbridge clapper bridge', lat: 50.5940966, lng: -3.911172, grid: 'SX 648 788', sq: 'SX6478',
+    poster: 'Postbridge poster',
+    stand: 'On the river bank just downstream, low down, so the river leads into the bridge. The road bridge also gives a view from above.',
+    light: 'Morning or late afternoon side light. Gorse brightest in spring.',
+    park: 'National Park car park in Postbridge (pay and display, with toilets).',
+    img: 'Postbridge Clapper Bridge.JPG', by: 'Davepark', lic: 'CC BY-SA 3.0', alt: 'The granite clapper bridge over the East Dart at Postbridge' },
+  { id: 'brentor', day: 'west', name: 'Brent Tor church', lat: 50.60325, lng: -4.16239, grid: 'SX 470 804', sq: 'SX4780',
+    poster: 'Brent Tor poster',
+    stand: 'Low on the open slope below the church, shooting uphill with rocks in the foreground. For a sunset silhouette, stand east of the hill so the sun sets behind the church.',
+    light: 'Late afternoon into sunset.',
+    park: 'Car park with toilets across the road from the path up.',
+    img: 'Brentor Church.jpg', by: 'Nilfanion', lic: 'CC BY-SA 3.0', alt: "St Michael's church on top of Brent Tor" },
+  { id: 'combestone', day: 'extra', name: 'Combestone Tor', lat: 50.5312068, lng: -3.8775391, grid: 'SX 670 718', sq: 'SX6771',
+    poster: null,
+    stand: 'On the tor itself, looking over the Dart valley. The most accessible tor on the moor, so useful for a quick sunrise stop.',
+    light: 'Sunrise.',
+    park: 'Small car park right beside the tor.',
+    img: 'Combestone Tor, Dartmoor (34331632361).jpg', by: 'Dave_S.', lic: 'CC BY 2.0', alt: 'Granite blocks of Combestone Tor' },
+  { id: 'meldon', day: 'extra', name: 'Meldon Viaduct', lat: 50.7130377, lng: -4.0342945, grid: 'SX 564 923', sq: 'SX5692',
+    poster: null,
+    stand: 'From the valley below for the full iron span against the sky. It now carries the Granite Way path, so a cyclist can stand in for a train in a railway-poster composition.',
+    light: 'Any time; autumn colour in the valley is a bonus.',
+    park: 'Meldon Reservoir car park, then a short walk.',
+    img: 'Meldon Viaduct Devon.jpg', by: 'Tina Cordon', lic: 'CC BY 3.0', alt: 'The iron Meldon Viaduct spanning the valley' }
+];
+
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Cards
+const cardsEl = document.getElementById('cards');
+cardsEl.innerHTML = PLACES.map((p, i) => `
+  <article class="card" id="${p.id}" data-day="${p.day}">
+    <figure><img src="${FP(p.img)}" alt="${esc(p.alt)}" loading="lazy" width="640" height="480"></figure>
+    <div class="body">
+      <h3><span class="num">${i + 1}</span>${esc(p.name)}</h3>
+      <div class="meta">
+        <span class="tag ${p.day}">${p.day === 'extra' ? 'Extra' : p.day === 'east' ? 'East day' : 'West day'}</span>
+        <span class="grid" title="OS grid reference">${p.grid}</span>
+        ${p.poster ? `<span class="poster">${esc(p.poster)}</span>` : ''}
+      </div>
+      <dl>
+        <div><dt>Where to stand</dt><dd>${esc(p.stand)}</dd></div>
+        <div><dt>Best light</dt><dd>${esc(p.light)}</dd></div>
+        <div><dt>Parking</dt><dd>${esc(p.park)}</dd></div>
+      </dl>
+      <div class="links">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}" target="_blank" rel="noopener">Directions</a>
+        <a href="https://www.geograph.org.uk/gridref/${p.sq}" target="_blank" rel="noopener">More photos of ${p.sq}</a>
+        <a href="#map" data-fly="${p.id}">Show on map</a>
+      </div>
+      <p class="credit" style="margin:0">Photo: <a href="${FILE(p.img)}" target="_blank" rel="noopener">${esc(p.by)}</a>, <a href="${LIC[p.lic]}" target="_blank" rel="noopener">${p.lic}</a>, via Wikimedia Commons</p>
+    </div>
+  </article>`).join('');
+
+// Map
+const map = L.map('map', { scrollWheelZoom: false }).setView([50.58, -3.93], 10);
+const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap contributors' }).addTo(map);
+const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17, attribution: '© OpenStreetMap contributors, SRTM | © OpenTopoMap (CC BY-SA)' });
+let topoOn = false;
+document.getElementById('layerBtn').addEventListener('click', (e) => {
+  topoOn = !topoOn;
+  if (topoOn) { map.removeLayer(osm); topo.addTo(map); e.target.textContent = 'Show street map'; }
+  else { map.removeLayer(topo); osm.addTo(map); e.target.textContent = 'Show contour map'; }
+});
+
+const markers = {};
+PLACES.forEach((p, i) => {
+  const icon = L.divIcon({ className: '', html: `<div class="pin ${p.day}" aria-hidden="true">${i + 1}</div>`, iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -14] });
+  const m = L.marker([p.lat, p.lng], { icon, title: p.name, alt: p.name }).addTo(map);
+  m.bindPopup(`<b>${i + 1}. ${esc(p.name)}</b><br>${p.grid}<br><a href="#${p.id}">Where to stand →</a>`);
+  markers[p.id] = m;
+});
+
+function fit(ids) {
+  const pts = ids.map((id) => markers[id].getLatLng());
+  map.fitBounds(L.latLngBounds(pts).pad(0.25), { maxZoom: 13 });
+}
+fit(PLACES.map((p) => p.id));
+
+// Filters
+document.querySelectorAll('.filters button').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.filters button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    const shown = PLACES.filter((p) => f === 'all' || p.day === f);
+    PLACES.forEach((p) => {
+      const on = shown.includes(p);
+      document.getElementById(p.id).classList.toggle('hidden', !on);
+      if (on) markers[p.id].addTo(map); else map.removeLayer(markers[p.id]);
+    });
+    fit(shown.map((p) => p.id));
+  });
+});
+
+// Card -> map
+cardsEl.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-fly]');
+  if (!a) return;
+  e.preventDefault();
+  const m = markers[a.dataset.fly];
+  document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  map.setView(m.getLatLng(), 14);
+  m.openPopup();
+});
+
+// Popup link -> card flash
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('.leaflet-popup-content a[href^="#"]');
+  if (!a) return;
+  const card = document.querySelector(a.getAttribute('href'));
+  if (card) { card.classList.add('flash'); setTimeout(() => card.classList.remove('flash'), 1600); }
+});
+
+// Locate
+let me = null;
+document.getElementById('locateBtn').addEventListener('click', (e) => {
+  if (!navigator.geolocation) { e.target.textContent = 'Location not available'; return; }
+  e.target.textContent = 'Finding you…';
+  navigator.geolocation.getCurrentPosition((pos) => {
+    const ll = [pos.coords.latitude, pos.coords.longitude];
+    if (me) map.removeLayer(me);
+    me = L.circleMarker(ll, { radius: 8, color: '#fff', weight: 3, fillColor: '#2F6E8F', fillOpacity: 1 }).addTo(map).bindPopup('You are here');
+    map.setView(ll, 12);
+    e.target.textContent = 'Show my location';
+  }, () => { e.target.textContent = 'Location blocked'; }, { enableHighAccuracy: true, timeout: 10000 });
+});
+</script>
+</body>
+</html>
