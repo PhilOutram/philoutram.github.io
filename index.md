@@ -21,6 +21,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/guit-box.png" alt=""> [Guit Box](https://guit-box.vercel.app/)
 - <img class="app-icon" src="assets/icons/first-twenty.svg" alt=""> [First Twenty](first-twenty)
 - <img class="app-icon" src="assets/icons/birthdays.png" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
+- [DnD Map Scratcher](dnd-map-scratcher)
 
 ## Games
 - <img class="app-icon" src="assets/icons/family-games.svg" alt=""> [Family Games](https://family-games-drab.vercel.app/)
@@ -53,4 +54,4 @@ layout: default
 - <img class="app-icon" src="assets/icons/kcs-tour.svg" alt=""> [King Charles Street Tour](kcs-tour)
 
 
-v1.8
+v1.9
