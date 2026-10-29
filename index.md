@@ -34,6 +34,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/boggle.svg" alt=""> [Boggle](https://boggle-lovat.vercel.app/)
 - <img class="app-icon" src="assets/icons/team-sudoku.svg" alt=""> [Team Sudoku](https://team-sudoku.vercel.app/)
 - <img class="app-icon" src="assets/icons/mech-attack.png" alt=""> [Mech Attack](mech-attack)
+- <img class="app-icon" src="assets/icons/myths-of-time.png" alt=""> [Myths of Time](myths-of-time)
 - [Hex Tribes](hex-tribes)
 
 ## Tutorials
