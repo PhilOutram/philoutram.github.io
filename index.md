@@ -49,6 +49,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/hockey-stats.png" alt=""> [25/26 Results Analysis](hockey-league-analysis) - [Python source on GitHub](https://github.com/PhilOutram/hockey-league-analysis)
 - <img class="app-icon" src="assets/icons/west-hockey.png" alt=""> [West Hockey League – Division 2 South](https://west.englandhockey.co.uk/competitions/2026-2027-4714903-adult-west-open---mens-group-4716307-west-open---mens-division-2-south)
 - <img class="app-icon" src="assets/icons/isca-club.png" alt=""> [Isca Hockey Club](https://isca-club-app.vercel.app/)
+- [ISCA Playbook](isca-playbook)
 
 ## Other
 
@@ -56,4 +57,4 @@ layout: default
 - <img class="app-icon" src="assets/icons/dartmoor-tour.svg" alt=""> [Dartmoor Photography Tour](dartmoor-photo-tour/)
 
 
-v1.10
+v1.11
