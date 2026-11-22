@@ -22,7 +22,7 @@ layout: default
 - <img class="app-icon" src="assets/icons/first-twenty.svg" alt=""> [First Twenty](first-twenty)
 - <img class="app-icon" src="assets/icons/birthdays.png" alt=""> [Birthdays](https://birthday-calendar-bice.vercel.app/)
 - [DnD Map Scratcher](dnd-map-scratcher)
-- [Back Reset](back-reset)
+- <img class="app-icon" src="assets/icons/back-reset.png" alt=""> [Back Reset](back-reset)
 
 ## Games
 - <img class="app-icon" src="assets/icons/family-games.svg" alt=""> [Family Games](https://family-games-drab.vercel.app/)
